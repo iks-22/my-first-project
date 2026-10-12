@@ -22,19 +22,11 @@ A small Flask app, containerized with Docker and tested automatically with GitHu
 
 \## Run it
 
-
-
+```
+docker compose up --build
 ```
 
-docker build -t my-first-project .
-
-docker run -p 5000:5000 my-first-project
-
-```
-
-
-
-Then open http://localhost:5000
+Then open http://localhost:5000. Each visit is counted and stored in PostgreSQL, and the count survives restarts thanks to a Docker volume.
 
 
 
@@ -50,5 +42,5 @@ On every push to `main`, GitHub Actions builds the image, runs the container, an
 
 
 
-Python, Flask, Docker, GitHub Actions, Git
+Python, Flask, Docker, GitHub Actions, Git, PostgreSQL
 
