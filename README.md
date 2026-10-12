@@ -4,6 +4,8 @@
 
 A small Flask app with a PostgreSQL database, containerized with Docker Compose and tested automatically with GitHub Actions.
 
+![Screenshot](screenshot.png)
+
 ## What it does
 
 - `/` returns "Hello DevOps" and a visit counter stored in PostgreSQL
