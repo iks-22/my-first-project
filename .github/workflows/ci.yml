@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t my-first-project .
+
+      - name: Run container and test
+        run: |
+          docker run -d -p 5000:5000 --name app my-first-project
+          sleep 5
+          curl --fail http://localhost:5000/health
